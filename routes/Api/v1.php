@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\Auth\LoginController;
 use App\Http\Controllers\Api\Auth\RegisterController;
 use App\Http\Controllers\Api\BooksController;
-use App\Http\Controllers\BuyerController;
+use App\Http\Controllers\Api\BuyerController;
 
 Route::post('register',RegisterController::class);
 Route::post('login', LoginController::class);
