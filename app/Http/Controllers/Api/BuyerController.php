@@ -1,7 +1,7 @@
 <?php
+namespace App\Http\Controllers\Api;
 
-namespace App\Http\Controllers;
-
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\BuyBookseRequest;
 use App\Http\Resources\BuyerResourse;

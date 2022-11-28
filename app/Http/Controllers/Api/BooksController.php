@@ -25,7 +25,7 @@ class BooksController extends Controller
 
     public function search(BookSearchRequest $request)
     {    
-      return BooksResource::collection($this->booksRepository->bookSearch((object)$request->all()));
+        return BooksResource::collection($this->booksRepository->bookSearch((object)$request->all()));
     }
 
     public function logout(Request $request)
