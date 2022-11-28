@@ -10,21 +10,21 @@ use App\Repository\Interfaces\BuyerRepositoryInterface;
 
 class BuyerRepository implements BuyerRepositoryInterface
 {
-     private Model $buyerquery;
-     private Model $userquery;
+     private Model $buyerModel;
+     private Model $userModel;
 
      
      public function __construct(Buyer $buyer,User $user)
      {
-        $this->buyerquery = $buyer;
-        $this->userquery = $user;
+        $this->buyerModel = $buyer;
+        $this->userModel = $user;
 
      }
 
      public function buyBooks($buyDetails)
      {
 
-        $user = $this->userquery::find(auth()->user()->id);
+        $user = $this->userModel->find(auth()->user()->id);
 
         $user->buyer()->detach($buyDetails->book_id);
         $user->buyer()->attach($buyDetails->book_id, ['status' => $buyDetails->status]);   
@@ -34,12 +34,12 @@ class BuyerRepository implements BuyerRepositoryInterface
 
      public function showBuyer()
      {                
-        return $this->buyerquery->with(['buyer','books'])->get();
+        return $this->buyerModel->with(['buyer','books'])->get();
      }
 
      public function showBuyerId(int $id)
      {
-        return $this->buyerquery->where('users_id',$id)->with(['buyer','books'])->get();
+        return $this->buyerModel->where('users_id',$id)->with(['buyer','books'])->get();
      }
 
 }

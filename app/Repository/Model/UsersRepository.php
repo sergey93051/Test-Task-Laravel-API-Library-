@@ -18,7 +18,7 @@ class UsersRepository  implements UsersRepositoryInterface
     public function  createUser($usersDetails): Model
     {
         
-     return  $this->query::create([
+     return  $this->query->create([
             'name' =>  $usersDetails->name,
             'email' => $usersDetails->email,
             'password' => bcrypt($usersDetails->password)

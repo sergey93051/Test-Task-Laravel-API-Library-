@@ -7,8 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 
 class BookSearchRequest extends FormRequest
-{
-    
+{    
 
     /**
      * Get the validation rules that apply to the request.
