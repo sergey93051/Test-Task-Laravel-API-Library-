@@ -9,7 +9,7 @@ use App\Repository\Interfaces\BooksRepositoryInterface;
 use Illuminate\Http\Request;
 
 
-class BooksController extends Controller
+class HomeController extends Controller
 {
     protected $booksRepository;
 
@@ -18,7 +18,7 @@ class BooksController extends Controller
         $this->booksRepository = $booksRepository;
     }
 
-    public function show()
+    public function index()
     {
         return BooksResource::collection($this->booksRepository->withPagination(16));
     }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -44,10 +45,15 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function buyer():BelongsToMany
+    public function roleManagment():BelongsTo
     {
-        return $this->belongsToMany(Books::class, 'buyer','users_id','books_id');
-    }   
+      return $this->belongsTo(RoleManagment::class);
+    }
+
+    public function userOrder():BelongsTo
+    {
+      return $this->belongsTo(UserOrder::class);
+    }
 
    
 }

@@ -39,9 +39,9 @@ class RouteServiceProvider extends ServiceProvider
 
     protected function apiV1(){
 
-        Route::prefix('v1')
+        Route::prefix('api/v1')
             ->middleware('api')
-            ->group(base_path('routes/Api/v1.php'));
+            ->group(base_path('routes/Api/Api_v1.php'));
 
     }
 

@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('buyer', function (Blueprint $table) {
-            $table->id();
-            $table->string('status');
+        Schema::create('books_item', function (Blueprint $table) {
+            $table->id();      
             $table->unsignedBigInteger('books_id');
-            $table->unsignedBigInteger('users_id');
-            $table->timestamps();
+            $table->unsignedBigInteger('user_order_id');
             $table->foreign('books_id')->references('id')->on('books')->onDelete('cascade');
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_order_id')->references('id')->on('user_order')->onDelete('cascade');
         });
-   
     }
 
     /**
@@ -32,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('buyer');
+        Schema::dropIfExists('books_item');
     }
 };

@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 interface BooksRepositoryInterface
 {
-     public function all():Model;
+     public function all();
+
+     public function createBooks($booksDetails);
+
+     public function deleteBooks($booksDetails);
 
      public function withpagination(int $count);
 

@@ -4,9 +4,11 @@ namespace App\Providers;
 
 use App\Repository\Interfaces\BooksRepositoryInterface;
 use App\Repository\Interfaces\BuyerRepositoryInterface;
+use App\Repository\Interfaces\OrderRepositoryInterface;
 use App\Repository\Interfaces\UsersRepositoryInterface;
 use App\Repository\Model\BooksRepository;
 use App\Repository\Model\BuyerRepository;
+use App\Repository\Model\OrderRepository;
 use App\Repository\Model\UsersRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -17,8 +19,7 @@ class AppServiceProvider extends ServiceProvider
 
         UsersRepositoryInterface::class => UsersRepository::class,
         BooksRepositoryInterface::class => BooksRepository::class,
-        BuyerRepositoryInterface::class => BuyerRepository::class
-
+        OrderRepositoryInterface::class => OrderRepository::class
     ];
 
 

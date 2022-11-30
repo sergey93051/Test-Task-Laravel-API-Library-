@@ -7,7 +7,7 @@ use Illuminate\Validation\Rule;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class BuyBookseRequest extends FormRequest
+class OrderRequest extends FormRequest
 {
     
     /**
@@ -19,7 +19,7 @@ class BuyBookseRequest extends FormRequest
     {
         return [
             'status' => ['required',Rule::in(['rent','buy'])],
-            'book_id' => 'required'
+            'books_id' => 'required'
         ];
     }
 
